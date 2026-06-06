@@ -17,6 +17,7 @@ import {
   Play
 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
+import { HeroScrollDemo } from '../../components/ui/HeroScrollDemo';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -175,6 +176,11 @@ export const LandingPage: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* 3D Scroll Dashboard Preview Section */}
+      <section className="bg-slate-50 border-t border-slate-100 py-16 overflow-hidden flex justify-center">
+        <HeroScrollDemo />
       </section>
 
       {/* Metrics section */}
