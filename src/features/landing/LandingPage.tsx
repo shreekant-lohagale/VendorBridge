@@ -101,7 +101,7 @@ export const LandingPage: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5 fill-current" />
               <span>Next-Gen Enterprise Procurement ERP</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 tracking-tight leading-tight">
               Digitize & Streamline <br />
               <span className="bg-gradient-to-r from-primary via-indigo-600 to-secondary bg-clip-text text-transparent">
@@ -143,7 +143,7 @@ export const LandingPage: React.FC = () => {
                 </div>
                 <span className="text-[10px] font-mono text-slate-400 font-bold">vendorbridge-console.app</span>
               </div>
-              
+
               {/* Mock dashboard KPIs */}
               <div className="grid grid-cols-3 gap-3">
                 {[
@@ -162,7 +162,7 @@ export const LandingPage: React.FC = () => {
               <div className="flex-1 bg-white border border-slate-200/50 rounded-xl p-4 flex flex-col gap-2 relative">
                 <div className="h-2 w-1/3 bg-slate-100 rounded" />
                 <div className="h-2.5 w-1/2 bg-slate-100/60 rounded" />
-                
+
                 {/* Visual bar graphics */}
                 <div className="flex items-end gap-3.5 justify-center flex-1 mt-3">
                   {[45, 65, 35, 75, 55, 95].map((h, idx) => (
@@ -204,7 +204,7 @@ export const LandingPage: React.FC = () => {
       <section id="features" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
+
             {/* Left Side: Features and Description */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               <div className="flex flex-col gap-3">
@@ -340,7 +340,7 @@ export const LandingPage: React.FC = () => {
                     Most Popular
                   </span>
                 )}
-                
+
                 <div className="flex flex-col gap-5">
                   <span className="text-slate-400 font-bold uppercase tracking-wider text-[11px]">{plan.name}</span>
                   <div className="flex items-baseline gap-1 mt-1">
@@ -348,9 +348,9 @@ export const LandingPage: React.FC = () => {
                     {plan.price !== 'Custom' && <span className="text-slate-400 text-xs">/month</span>}
                   </div>
                   <p className="text-slate-500 text-xs leading-relaxed font-medium mt-1">{plan.desc}</p>
-                  
+
                   <div className="w-full h-px bg-slate-100 my-2" />
-                  
+
                   <div className="flex flex-col gap-3">
                     {plan.features.map((feat, fIdx) => (
                       <div key={fIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-600">
