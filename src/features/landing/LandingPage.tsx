@@ -435,7 +435,7 @@ export const LandingPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-3">
             <Button
               onClick={handleLaunchDemo}
-              className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 font-bold py-3 px-6 rounded-xl shadow-lg shadow-black/5"
+              className="w-full sm:w-auto bg-black hover:bg-slate-50 text-slate-800 font-bold py-3 px-6 rounded-xl shadow-lg shadow-black/5"
               leftIcon={<Play className="w-4 h-4 text-primary fill-primary/10" />}
             >
               Launch Demo Console
