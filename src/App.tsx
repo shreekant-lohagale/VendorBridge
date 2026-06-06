@@ -23,6 +23,7 @@ import { PurchaseOrderView } from './features/purchase-orders/PurchaseOrderView'
 import { InvoiceManagement } from './features/invoices/InvoiceManagement';
 import { AuditLogs } from './features/activity-logs/AuditLogs';
 import { ReportsPanel } from './features/reports/ReportsPanel';
+import { LandingPage } from './features/landing/LandingPage';
 
 function App() {
   const currentUser = useStore((state) => state.currentUser);
@@ -30,6 +31,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Public Landing Page */}
+        <Route path="/" element={<LandingPage />} />
+
         {/* Auth Routes */}
         <Route
           path="/login"
@@ -64,9 +68,6 @@ function App() {
             </ProtectedRoute>
           }
         >
-          {/* Main Redirect */}
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          
           {/* Dashboard */}
           <Route path="/dashboard" element={<Dashboard />} />
 
