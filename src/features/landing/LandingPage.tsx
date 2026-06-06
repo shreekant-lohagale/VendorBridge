@@ -277,15 +277,24 @@ export const LandingPage: React.FC = () => {
             </div>
 
             {/* Right Side: Procurement Lifecycle Roadmap */}
-            <div className="lg:col-span-7 w-full lg:sticky lg:top-24">
-              <div className="w-full flex flex-col justify-center bg-slate-950 rounded-3xl border border-slate-900 shadow-xl overflow-hidden p-6 no-print">
-                <div className="text-center flex flex-col gap-1.5 p-2 mb-2">
-                  <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Interactive Roadmap</span>
-                  <h3 className="text-lg font-extrabold text-white">Procurement Lifecycle Roadmap</h3>
-                  <p className="text-xs text-slate-400 max-w-md mx-auto">
-                    Click on the orbital nodes to review operational stages, track connected checkpoints, and observe current workload balances.
-                  </p>
+            <div className="lg:col-span-7 w-full lg:sticky lg:top-24 flex flex-col gap-6">
+              <div className="flex flex-col gap-3">
+                <div className="w-fit inline-flex items-center gap-1.5 px-3 py-1 bg-primary/5 rounded-full border border-primary/10 text-primary text-xs font-semibold select-none">
+                  <Sparkles className="w-3.5 h-3.5 fill-current" />
+                  <span>Operations Workflow</span>
                 </div>
+                <h3 className="text-3xl font-extrabold text-slate-800 tracking-tight leading-tight">
+                  Procurement <br />
+                  <span className="bg-gradient-to-r from-primary via-indigo-600 to-secondary bg-clip-text text-transparent">
+                    Lifecycle Roadmap
+                  </span>
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                  Click on the orbital nodes to review operational stages, track connected checkpoints, and observe current workload balances.
+                </p>
+              </div>
+
+              <div className="w-full no-print">
                 <RadialOrbitalTimelineDemo />
               </div>
             </div>
