@@ -72,11 +72,11 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[60rem] md:h-[80rem] flex flex-col items-center justify-center relative p-2 md:p-20 overflow-hidden w-full"
+      className="h-[36rem] sm:h-[55rem] md:h-[80rem] flex flex-col items-center justify-center relative p-2 sm:p-10 md:p-20 overflow-hidden w-full"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-6 sm:py-20 md:py-40 w-full relative"
         style={{
           perspective: "1000px",
         }}
@@ -91,9 +91,9 @@ export const ContainerScroll = ({
             boxShadow:
               "0 10px 50px -12px rgba(0, 0, 0, 0.08), 0 30px 100px -30px rgba(37, 99, 235, 0.12)",
           }}
-          className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-slate-200/90 p-2 md:p-6 bg-slate-50/80 rounded-[30px]"
+          className="max-w-5xl -mt-6 sm:-mt-12 mx-auto h-[16rem] sm:h-[28rem] md:h-[40rem] w-full border-4 border-slate-200/90 p-1 md:p-6 bg-slate-50/80 rounded-2xl md:rounded-[30px]"
         >
-          <div className="h-full w-full overflow-hidden rounded-2xl bg-white md:rounded-2xl md:p-4 border border-slate-100">
+          <div className="h-full w-full overflow-hidden rounded-xl md:rounded-2xl bg-white md:p-4 border border-slate-100">
             {children}
           </div>
         </div>
