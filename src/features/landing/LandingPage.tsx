@@ -200,77 +200,96 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features & Roadmap Section */}
       <section id="features" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-16">
-          <div className="text-center flex flex-col gap-3">
-            <h2 className="text-3xl font-extrabold text-slate-800 tracking-tight">
-              Powerful Features for Seamless Procurement
-            </h2>
-            <p className="text-slate-500 text-sm md:text-base font-semibold max-w-xl mx-auto">
-              VendorBridge integrates all supply chain operational loops into a single workspace
-            </p>
-          </div>
-
-          {/* Interactive Radial Orbital Timeline */}
-          <div className="w-full flex justify-center py-4 bg-slate-950 rounded-3xl border border-slate-900 shadow-xl overflow-hidden p-6 my-4 no-print">
-            <div className="w-full max-w-3xl flex flex-col gap-4">
-              <div className="text-center flex flex-col gap-1.5 p-2">
-                <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Interactive Roadmap</span>
-                <h3 className="text-lg font-extrabold text-white">Procurement Lifecycle Roadmap</h3>
-                <p className="text-xs text-slate-400 max-w-md mx-auto">Click on the orbital nodes to review operational stages, track connected checkpoints, and observe current workload balances.</p>
-              </div>
-              <RadialOrbitalTimelineDemo />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Users className="w-5 h-5 text-blue-600" />,
-                title: 'Vendor Registry & Trust',
-                desc: 'Onboard partners, verify GST credentials, and store ISO/quality compliance documents securely.',
-                color: 'bg-blue-50 border-blue-100/50',
-              },
-              {
-                icon: <FileText className="w-5 h-5 text-indigo-600" />,
-                title: 'Multi-Step RFQ Wizard',
-                desc: 'Create structured request specifications, attach drawings, and invite select partner pools.',
-                color: 'bg-indigo-50 border-indigo-100/50',
-              },
-              {
-                icon: <CheckSquare className="w-5 h-5 text-purple-600" />,
-                title: 'Comparison Matrices',
-                desc: 'Analyze bidding rates side-by-side. Highlight lowest quotes and calculate trust ratings.',
-                color: 'bg-purple-50 border-purple-100/50',
-              },
-              {
-                icon: <Sparkles className="w-5 h-5 text-emerald-600" />,
-                title: 'Manager Sign-Off Loops',
-                desc: 'Multi-level approval pathways. Log decision histories, comments, and audit timestamps.',
-                color: 'bg-emerald-50 border-emerald-100/50',
-              },
-              {
-                icon: <TrendingUp className="w-5 h-5 text-amber-600" />,
-                title: 'Purchase Orders (PO)',
-                desc: 'Auto-compile contracts, send receipts to vendors, and monitor delivery acknowledgements.',
-                color: 'bg-amber-50 border-amber-100/50',
-              },
-              {
-                icon: <FileSpreadsheet className="w-5 h-5 text-rose-600" />,
-                title: 'Billing & Invoicing',
-                desc: 'GST tax split calculations. Generate unpaid lists, download PDFs, or print statements.',
-                color: 'bg-rose-50 border-rose-100/50',
-              },
-            ].map((feat, idx) => (
-              <div key={idx} className="p-6 bg-white border border-slate-100 rounded-2xl shadow-premium hover:shadow-lg transition duration-200 flex flex-col gap-4">
-                <div className={`w-10 h-10 rounded-xl ${feat.color} border flex items-center justify-center`}>
-                  {feat.icon}
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Left Side: Features and Description */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <div className="flex flex-col gap-3">
+                <div className="w-fit inline-flex items-center gap-1.5 px-3 py-1 bg-primary/5 rounded-full border border-primary/10 text-primary text-xs font-semibold select-none">
+                  <Sparkles className="w-3.5 h-3.5 fill-current" />
+                  <span>Interactive System Features</span>
                 </div>
-                <h4 className="font-bold text-slate-800 text-base">{feat.title}</h4>
-                <p className="text-slate-500 text-xs leading-relaxed font-medium">{feat.desc}</p>
+                <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight leading-tight">
+                  Powerful Features for <br />
+                  <span className="bg-gradient-to-r from-primary via-indigo-600 to-secondary bg-clip-text text-transparent">
+                    Seamless Procurement
+                  </span>
+                </h2>
+                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                  VendorBridge integrates all supply chain operational loops into a single workspace, eliminating manual handoffs and speeding up procurement cycles.
+                </p>
               </div>
-            ))}
+
+              {/* Vertical Feature List */}
+              <div className="flex flex-col gap-4 mt-2">
+                {[
+                  {
+                    icon: <Users className="w-4.5 h-4.5 text-blue-600" />,
+                    title: 'Vendor Registry & Trust',
+                    desc: 'Onboard partners, verify GST credentials, and store ISO compliance docs.',
+                    color: 'bg-blue-50 border-blue-100/50',
+                  },
+                  {
+                    icon: <FileText className="w-4.5 h-4.5 text-indigo-600" />,
+                    title: 'Multi-Step RFQ Wizard',
+                    desc: 'Create structured request specs, attach drawings, and invite partner pools.',
+                    color: 'bg-indigo-50 border-indigo-100/50',
+                  },
+                  {
+                    icon: <CheckSquare className="w-4.5 h-4.5 text-purple-600" />,
+                    title: 'Comparison Matrices',
+                    desc: 'Analyze bidding rates side-by-side to highlight lowest quotes.',
+                    color: 'bg-purple-50 border-purple-100/50',
+                  },
+                  {
+                    icon: <Sparkles className="w-4.5 h-4.5 text-emerald-600" />,
+                    title: 'Manager Sign-Off Loops',
+                    desc: 'Multi-level approval pathways with audit timestamps and logs.',
+                    color: 'bg-emerald-50 border-emerald-100/50',
+                  },
+                  {
+                    icon: <TrendingUp className="w-4.5 h-4.5 text-amber-600" />,
+                    title: 'Purchase Orders (PO)',
+                    desc: 'Auto-compile contracts and monitor supplier delivery receipts.',
+                    color: 'bg-amber-50 border-amber-100/50',
+                  },
+                  {
+                    icon: <FileSpreadsheet className="w-4.5 h-4.5 text-rose-600" />,
+                    title: 'Billing & Invoicing',
+                    desc: 'Automate GST splits, track unpaid lists, and export PDF statements.',
+                    color: 'bg-rose-50 border-rose-100/50',
+                  },
+                ].map((feat, idx) => (
+                  <div key={idx} className="group flex items-start gap-4 p-3.5 rounded-xl border border-slate-100 bg-slate-50/40 hover:bg-white hover:border-slate-200/60 hover:shadow-md transition-all duration-200">
+                    <div className={`w-9 h-9 rounded-lg ${feat.color} border flex items-center justify-center shrink-0`}>
+                      {feat.icon}
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <h4 className="font-bold text-slate-800 text-sm group-hover:text-primary transition-colors">{feat.title}</h4>
+                      <p className="text-slate-500 text-xs font-medium leading-relaxed">{feat.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Side: Procurement Lifecycle Roadmap */}
+            <div className="lg:col-span-7 w-full lg:sticky lg:top-24">
+              <div className="w-full flex flex-col justify-center bg-slate-950 rounded-3xl border border-slate-900 shadow-xl overflow-hidden p-6 no-print">
+                <div className="text-center flex flex-col gap-1.5 p-2 mb-2">
+                  <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Interactive Roadmap</span>
+                  <h3 className="text-lg font-extrabold text-white">Procurement Lifecycle Roadmap</h3>
+                  <p className="text-xs text-slate-400 max-w-md mx-auto">
+                    Click on the orbital nodes to review operational stages, track connected checkpoints, and observe current workload balances.
+                  </p>
+                </div>
+                <RadialOrbitalTimelineDemo />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
