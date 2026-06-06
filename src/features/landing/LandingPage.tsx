@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { HeroScrollDemo } from '../../components/ui/HeroScrollDemo';
+import { RadialOrbitalTimelineDemo } from '../../components/ui/RadialOrbitalTimelineDemo';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -209,6 +210,18 @@ export const LandingPage: React.FC = () => {
             <p className="text-slate-500 text-sm md:text-base font-semibold max-w-xl mx-auto">
               VendorBridge integrates all supply chain operational loops into a single workspace
             </p>
+          </div>
+
+          {/* Interactive Radial Orbital Timeline */}
+          <div className="w-full flex justify-center py-4 bg-slate-950 rounded-3xl border border-slate-900 shadow-xl overflow-hidden p-6 my-4 no-print">
+            <div className="w-full max-w-3xl flex flex-col gap-4">
+              <div className="text-center flex flex-col gap-1.5 p-2">
+                <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Interactive Roadmap</span>
+                <h3 className="text-lg font-extrabold text-white">Procurement Lifecycle Roadmap</h3>
+                <p className="text-xs text-slate-400 max-w-md mx-auto">Click on the orbital nodes to review operational stages, track connected checkpoints, and observe current workload balances.</p>
+              </div>
+              <RadialOrbitalTimelineDemo />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
