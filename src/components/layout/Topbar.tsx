@@ -1,9 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Bell, Check, Wifi, AlertCircle } from 'lucide-react';
+import { Bell, Check, Wifi, AlertCircle, Menu } from 'lucide-react';
 import { useStore } from '../../store/useStore';
 
-export const Topbar: React.FC = () => {
+interface TopbarProps {
+  onMenuClick?: () => void;
+}
+
+export const Topbar: React.FC<TopbarProps> = ({ onMenuClick }) => {
   const location = useLocation();
   const currentUser = useStore((state) => state.currentUser);
   const notifications = useStore((state) => state.notifications);
@@ -52,16 +56,29 @@ export const Topbar: React.FC = () => {
   };
 
   return (
-    <header className="h-16 px-8 bg-white border-b border-slate-100 flex items-center justify-between no-print">
+    <header className="h-16 px-4 md:px-8 bg-white border-b border-slate-100 flex items-center justify-between no-print">
       {/* Page Title / Breadcrumbs */}
-      <div className="flex items-center gap-2">
-        <span className="text-xs font-semibold text-slate-400 select-none">
-          Portal
-        </span>
-        <span className="text-xs font-semibold text-slate-300 select-none">
-          /
-        </span>
-        <span className="text-sm font-semibold text-slate-700 select-none">
+      <div className="flex items-center gap-3">
+        {onMenuClick && (
+          <button
+            onClick={onMenuClick}
+            className="p-1.5 hover:bg-slate-50 text-slate-600 rounded-lg lg:hidden cursor-pointer shrink-0"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+        )}
+        <div className="hidden sm:flex items-center gap-2">
+          <span className="text-xs font-semibold text-slate-400 select-none">
+            Portal
+          </span>
+          <span className="text-xs font-semibold text-slate-300 select-none">
+            /
+          </span>
+          <span className="text-sm font-semibold text-slate-700 select-none">
+            {getBreadcrumb()}
+          </span>
+        </div>
+        <span className="sm:hidden text-sm font-bold text-slate-700 select-none">
           {getBreadcrumb()}
         </span>
       </div>

@@ -209,10 +209,10 @@ export function DataTable<T extends { id: string | number }>({
         </table>
       </div>
 
-      {/* Pagination Bar */}
+          {/* Pagination Bar */}
       {sortedData.length > 0 && (
-        <div className="flex items-center justify-between px-6 py-4.5 border-t border-slate-100 bg-slate-50/20 text-slate-500 text-sm">
-          <div className="flex items-center gap-1.5 select-none">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4.5 border-t border-slate-100 bg-slate-50/20 text-slate-500 text-sm">
+          <div className="flex flex-wrap items-center gap-2 justify-center sm:justify-start select-none w-full sm:w-auto">
             <span>Show</span>
             <select
               value={pageSize}
@@ -229,13 +229,13 @@ export function DataTable<T extends { id: string | number }>({
               ))}
             </select>
             <span>entries</span>
-            <span className="ml-4 font-normal text-xs text-slate-400">
+            <span className="ml-0 sm:ml-4 font-normal text-xs text-slate-400 w-full sm:w-auto text-center sm:text-left mt-1 sm:mt-0">
               Showing {Math.min((currentPage - 1) * pageSize + 1, sortedData.length)} to{' '}
               {Math.min(currentPage * pageSize, sortedData.length)} of {sortedData.length} entries
             </span>
           </div>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 justify-center w-full sm:w-auto">
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
@@ -243,7 +243,7 @@ export function DataTable<T extends { id: string | number }>({
             >
               <ChevronLeft className="w-4.5 h-4.5" />
             </button>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 flex-wrap justify-center">
               {Array.from({ length: totalPages }).map((_, idx) => {
                 const pageNum = idx + 1;
                 return (

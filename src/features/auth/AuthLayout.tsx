@@ -10,7 +10,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
     <div className="min-h-screen w-screen bg-slate-50 flex items-center justify-center p-6 md:p-12 font-sans overflow-y-auto">
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 bg-white rounded-3xl border border-slate-100 shadow-2xl overflow-hidden min-h-[680px]">
         {/* Left Side: Marketing & Value Proposition */}
-        <div className="lg:col-span-6 bg-slate-50 p-8 md:p-12 flex flex-col justify-between border-r border-slate-100">
+        <div className="hidden lg:flex lg:col-span-6 bg-slate-50 p-8 md:p-12 flex-col justify-between border-r border-slate-100">
           {/* Brand Logo */}
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white shadow-md shadow-primary/20">
@@ -97,7 +97,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
         </div>
 
         {/* Right Side: Form Content Card Wrapper */}
-        <div className="lg:col-span-6 p-8 md:p-12 flex items-center justify-center bg-white">
+        <div className="col-span-12 lg:col-span-6 p-8 md:p-12 flex items-center justify-center bg-white">
           <div className="w-full max-w-sm">
             {children}
           </div>
