@@ -39,8 +39,8 @@ export const ContainerScroll = ({
     gsap.set(card, {
       transformPerspective: 1000,
       rotateX: 20,
-      scale: isMobile ? 0.8 : 1.05,
-      y: 0,
+      scale: isMobile ? 0.5 : 0.6, // Start small
+      y: 50,
     });
 
     // Create GSAP ScrollTrigger timeline
@@ -54,12 +54,12 @@ export const ContainerScroll = ({
     });
 
     tl.to(header, {
-      y: -100,
+      y: -80,
       ease: "none",
     }, 0)
     .to(card, {
       rotateX: 0,
-      scale: 1,
+      scale: 1.1, // Animate to big!
       y: -50,
       ease: "none",
     }, 0);
